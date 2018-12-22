@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>bisectercise</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      body {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 180px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #222;
+        margin: 0;
+      }
+
+      main {
+        display: flex;
+        flex: 1;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .actions {
+        display: flex;
+        margin-top: 10px;
+      }
+
+      button {
+        font-size: 20px;
+        border: none;
+        background: #336633;
+        color: #eaeaea;
+        border-radius: 4px;
+        width: 40px;
+        height: 40px;
+      }
+
+      button:first-child {
+        margin-right: 10px;
+      }
+
+      footer {
+        padding: 10px;
+        font-size: 13px;
+        background: #eaeaea;
+        width: 100%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="number">0</div>
+
+      <div class="actions">
+        <button data-action="dec">-</button>
+        <button data-action="inc">+</button>
+      </div>
+    </main>
+
+    <footer>Version: 1</footer>
+
+    <script>
+      (() => {
+        const t = document.getElementById("number");
+
+        document.querySelectorAll("button").forEach(el =>
+          el.addEventListener("click", e => {
+            const val = parseInt(t.innerText, 10);
+            const action = e.target.getAttribute("data-action");
+
+            t.innerText = action === "inc" ? val + 1 : val - 1;
+          })
+        );
+      })();
+    </script>
+  </body>
+</html>
