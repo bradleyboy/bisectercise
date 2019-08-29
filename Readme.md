@@ -38,7 +38,7 @@ git checkout master
 Now start the bisect:
 
 ```
-git bisect start HEAD 4d83cf
+git bisect start 4d83cf HEAD
 ```
 
 Notice we provide the good and bad commits (in that order) as additional arguments after `git bisect start`.
