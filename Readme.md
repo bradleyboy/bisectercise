@@ -7,7 +7,7 @@
 Clone this repository to your local machine like so:
 
 ```
-git clone git@github.com:bradleyboy/bisectercise.git
+git clone https://github.com/bradleyboy/bisectercise.git
 cd bisectercise
 ```
 
@@ -29,19 +29,19 @@ Now refresh `index.html` in your browser. The `+` and `-` buttons should now wor
 
 ## Starting the bisect
 
-Now that we have a reference to both a good and bad commit, we can use `git bisect` to quickly find the bad commit. First, let's get back to the master branch:
+Now that we have a reference to both a good and bad commit, we can use `git bisect` to quickly find the bad commit. First, let's get back to the main branch:
 
 ```
-git checkout master
+git checkout main
 ```
 
 Now start the bisect:
 
 ```
-git bisect start 4d83cf HEAD
+git bisect start HEAD 4d83cf
 ```
 
-Notice we provide the good and bad commits (in that order) as additional arguments after `git bisect start`.
+Notice we provide our known bad and good commits (in that order) as additional arguments after `git bisect start`.
 
 Bisect now checks out a commit halfway between the good and bad commit. It will keep doing this until it finds the commit that first caused this bug. Each time, we need to test for the bug in the browser and tell bisect if this is a good or bad commit.
 
