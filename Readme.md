@@ -66,3 +66,14 @@ a1b2c3 is the first bad commit
 Hooray! We found the bad commit.
 
 
+## Understanding the Bug
+
+Once git bisect locates the buggy commit, you can utilize git show to examine the changes introduced in that commit. This breakdown provides a detailed overview of the modifications made, aiding in pinpointing the root cause of the bug. By understanding the exact alterations that led to the issue, developers can devise an effective solution with clarity and precision.
+
+Execute the following command to inspect the changes:
+
+```
+git show
+```
+
+Amazing! With this information, you can effectively address and fix the problematic commit.
